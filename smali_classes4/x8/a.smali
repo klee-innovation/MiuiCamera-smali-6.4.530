@@ -169,11 +169,13 @@
 .end method
 
 .method public static c(Landroid/content/res/Resources;ILjava/lang/Integer;)Landroid/graphics/drawable/Drawable;
-    .locals 5
+    .locals 6
     .param p1    # I
         .annotation build Landroidx/annotation/IdRes;
         .end annotation
     .end param
+
+    move v4, p1
 
     invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
 
@@ -255,7 +257,26 @@
 
     move-result-object p2
 
+    :try_start_9
     invoke-virtual {p2, p1}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
+    move-result-object p2
+    :try_end_9
+    .catch Ljava/io/FileNotFoundException; {:try_start_9 .. :try_end_9} :catch_9
+
+    goto :goto_9
+
+    :catch_9
+    move-exception p1
+
+    const/4 p1, 0x0
+
+    invoke-static {p0, v4, p1}, Landroidx/core/content/res/ResourcesCompat;->getDrawable(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    return-object p0
+
+    :goto_9
 
     move-result-object p2
 
