@@ -610,18 +610,7 @@
 .method public static z()Z
     .locals 1
 
-    sget-object v0, LF7/e;->d:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    invoke-static {}, LF7/e;->h()L뀷뀻뀹끺뀹뀽끺뀰뀱뀢뀽뀷뀱끺뀷뀻뀹뀹뀻뀺끺뀗뀻뀹뀹뀻뀺;
-
-    :cond_0
-    sget-object v0, LF7/e;->d:Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
+    const/4 v0, 0x0
 
     return v0
 .end method

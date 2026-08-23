@@ -23161,11 +23161,9 @@
 .method public isDoingAction()Z
     .locals 1
 
-    invoke-super {p0}, Lcom/xiaomi/camera/module/PhotoBase;->isDoingAction()Z
+    const/4 v0, 0x0
 
-    move-result v0
-
-    if-nez v0, :cond_1
+    return v0
 
     iget-object p0, p0, Lcom/android/camera/module/Camera2Module;->mMultiCap:Lx3/s;
 

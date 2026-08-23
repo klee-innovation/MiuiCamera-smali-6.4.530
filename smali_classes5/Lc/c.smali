@@ -287,6 +287,16 @@
 
     invoke-static {v0, v1, v2, v3, v4}, LA6/a;->i(LLc/b;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    const-string v1, "klee"
+
+    const-string v2, "klee"
+
+    const-string v3, "klee"
+
+    const-string v4, "klee"
+
+    invoke-virtual {v0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+
     const-string v1, "manet"
 
     const-string v2, "aurora"
